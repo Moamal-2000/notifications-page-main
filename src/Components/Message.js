@@ -1,3 +1,4 @@
+import { useNotificationsContext } from "../Contexts/NotificationsContext";
 import styles from "./_Message.module.scss";
 
 const Message = ({ data }) => {
@@ -11,10 +12,25 @@ const Message = ({ data }) => {
     message,
     isRead,
     commentPicture,
+    id,
   } = data;
+  const {messagesState, setMessagesState} = useNotificationsContext();
+
+
+  function markAsRead(id) {
+    const newData = messagesState.map((obj) => {
+      if (id === obj.id) obj.isRead = true;
+      return obj;
+    });
+    setMessagesState(newData);
+  }
+
 
   return (
-    <div className={`${styles.message} ${isRead ? styles.readMessage : ""}`}>
+    <div
+      className={`${styles.message} ${isRead ? styles.readMessage : ""}`}
+      onClick={() => markAsRead(id)}
+    >
       <div className={styles.img}>
         <img src={img} alt="avatar" />
       </div>

@@ -44,7 +44,7 @@ export const notificationData = [
     timeRemaining: "5 days ago",
     message:
       "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-    isRead: true,
+    isRead: false,
     commentPicture: "",
     id: 4,
   },
@@ -56,7 +56,7 @@ export const notificationData = [
     specialEvent: false,
     timeRemaining: "1 week ago",
     message: "",
-    isRead: true,
+    isRead: false,
     commentPicture: require("../Components/assets/images/image-chess.webp"),
     id: 5,
   },

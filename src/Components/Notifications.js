@@ -3,13 +3,24 @@ import AllMessages from "./AllMessages";
 import styles from "./_Notifications.module.scss";
 
 const Notifications = () => {
-  const messagesData = useNotificationsContext();
+  const {messagesState, setMessagesState} = useNotificationsContext();
+
 
   function getNumOfUnreadMessages() {
     let result = 0;
-    messagesData.forEach((obj) => !obj.isRead && result++);
+    messagesState.forEach((obj) => !obj.isRead && result++);
     return result;
   }
+
+
+  function markAllAsRead() {
+    const newData = messagesState.map(obj => {
+      obj.isRead = true
+      return obj
+    })
+    setMessagesState(newData);
+  }
+
 
   return (
     <div className="container">
@@ -18,7 +29,7 @@ const Notifications = () => {
           <h3>
             Notifications <span>{getNumOfUnreadMessages()}</span>
           </h3>
-          <button type="button">Mark all as read</button>
+          <button type="button" onClick={() => markAllAsRead()}>Mark all as read</button>
         </header>
 
         <AllMessages />

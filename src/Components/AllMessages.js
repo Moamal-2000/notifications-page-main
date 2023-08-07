@@ -1,13 +1,12 @@
-import Message from "./Message";
-import styles from "./_AllMessages.module.scss";
 import { useNotificationsContext } from "../Contexts/NotificationsContext";
+import Message from "./Message";
 
 const AllMessages = () => {
-  const messagesData = useNotificationsContext()
+  const messagesData = useNotificationsContext();
 
   return (
-    <div className={styles.notification}>
-      {messagesData.map((obj) => (
+    <div>
+      {messagesData.messagesState.map((obj) => (
         <Message data={obj} key={obj.id} />
       ))}
     </div>

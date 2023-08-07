@@ -8,6 +8,7 @@
   @include prefix(border-radius, 10px);
   cursor: pointer;
   user-select: none;
+  @include prefix(transition, background-color .3s);
 }
 
 .readMessage {
@@ -89,10 +90,10 @@
   width: 8px;
   height: 8px;
   background-color: var(--red);
-  @include prefix(border-radius, 50%);
   position: absolute;
   right: -12px;
   top: 50%;
+  @include prefix(border-radius, 50%);
   @include prefix(transform, translateY(-30%));
 }
 
