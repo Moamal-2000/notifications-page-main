@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Notifications from "./Components/Notifications";
+import { NotificationsContext } from "./Contexts/NotificationsContext";
+import { notificationData } from "./Data/notificationData";
 
 function App() {
+
+  const messagesData = notificationData;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotificationsContext.Provider value={messagesData}>
+      <div className="App">
+        <Notifications />
+      </div>
+    </NotificationsContext.Provider>
   );
 }
 

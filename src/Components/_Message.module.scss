@@ -1,0 +1,113 @@
+@import "../Sass/mixins";
+
+.message {
+  display: flex;
+  align-items: center;
+  background-color: #f6fafd;
+  padding: 14px;
+  @include prefix(border-radius, 10px);
+  cursor: pointer;
+  user-select: none;
+}
+
+.readMessage {
+  background-color: transparent;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.img {
+  min-width: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+  user-select: none;
+  margin-right: 14px;
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userName {
+  color: var(--very-dark-blue);
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.content p {
+  color: var(--dark-grayish-blue);
+  margin: 0 8px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.event {
+  color: var(--dark-grayish-blue);
+  font-size: .85rem;
+  font-weight: 800;
+  position: relative;
+}
+
+.specialEvent {
+  color: var(--blue);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--red);
+  @include prefix(border-radius, 50%);
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  @include prefix(transform, translateY(-30%));
+}
+
+.commentPictureHolder {
+  width: 40px;
+  height: 40px;
+}
+
+.timeRemaining {
+  color: var(--grayish-blue);
+  font-size: .8rem;
+}
+
+.messageContent {
+  color: var(--dark-grayish-blue);
+  font-size: .85rem;
+  font-weight: 500;
+  border: solid 1px #c5c5c5;
+  padding: 16px;
+  margin-top: 10px;
+  @include prefix(border-radius, 6px)
+}
+
+:root {
+  --red: #f65351;
+  --blue: #0a317b;
+  --white: #fff;
+  --very-light-grayish-blue: #f7fafd;
+  --light-grayish-blue-1: #e5effa;
+  --light-grayish-blue-2: #dde7ee;
+  --grayish-blue: #939dae;
+  --dark-grayish-blue: #5e6778;
+  --very-dark-blue: #1c202b;
+}
