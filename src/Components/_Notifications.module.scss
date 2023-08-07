@@ -11,7 +11,9 @@
 
 @media (max-width: 768px) {
   .notificationsContainer {
-    width: 94%;
+    width: 100%;
+    margin: 0;
+    @include prefix(border-radius, 0);
   }
 }
 
@@ -37,10 +39,11 @@
   display: inline-block;
   background-color: var(--blue);
   color: var(--white);
-  font-size: 12px;
+  font-size: .75rem;
   padding: 2px 9px;
   margin-left: 10px;
   @include prefix(border-radius, 5px);
+  user-select: none;
 }
 
 .notificationsContainer header button {
@@ -51,20 +54,8 @@
   color: var(--dark-grayish-blue);
   font-size: .75rem;
   @include prefix(transition, color .3s);
-}
 
-.notificationsContainer header button:hover {
-  color: var(--blue);
-}
-
-:root {
-  --red: #f65351;
-  --blue: #0a317b;
-  --white: #fff;
-  --very-light-grayish-blue: #f7fafd;
-  --light-grayish-blue-1: #e5effa;
-  --light-grayish-blue-2: #dde7ee;
-  --grayish-blue: #939dae;
-  --dark-grayish-blue: #5e6778;
-  --very-dark-blue: #1c202b;
+  &:hover {
+    color: var(--blue);
+  }
 }

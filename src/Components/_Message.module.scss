@@ -3,7 +3,7 @@
 .message {
   display: flex;
   align-items: center;
-  background-color: #f6fafd;
+  background-color: var(--very-light-grayish-blue);
   padding: 14px;
   @include prefix(border-radius, 10px);
   cursor: pointer;
@@ -48,6 +48,11 @@
   color: var(--very-dark-blue);
   font-size: .85rem;
   font-weight: 800;
+  @include prefix(transition, color .3s);
+
+  &:hover {
+    color: var(--blue);
+  }
 }
 
 .content p {
@@ -57,11 +62,22 @@
   font-weight: 500;
 }
 
+@media (max-width: 376px) {
+  .content p {
+    margin: 2px 0;
+  }
+}
+
 .event {
   color: var(--dark-grayish-blue);
   font-size: .85rem;
   font-weight: 800;
   position: relative;
+  @include prefix(transition, color .3s);
+
+  &:hover {
+    color: var(--blue);
+  }
 }
 
 .specialEvent {
@@ -83,6 +99,13 @@
 .commentPictureHolder {
   width: 40px;
   height: 40px;
+  border: solid 3px var(--white);
+  @include prefix(border-radius, 6px);
+  @include prefix(transition, border-color .3s);
+
+  &:hover {
+    border-color: var(--light-grayish-blue-1);
+  }
 }
 
 .timeRemaining {
@@ -97,17 +120,10 @@
   border: solid 1px #c5c5c5;
   padding: 16px;
   margin-top: 10px;
-  @include prefix(border-radius, 6px)
-}
+  @include prefix(border-radius, 6px);
+  @include prefix(transition, background-color .3s);
 
-:root {
-  --red: #f65351;
-  --blue: #0a317b;
-  --white: #fff;
-  --very-light-grayish-blue: #f7fafd;
-  --light-grayish-blue-1: #e5effa;
-  --light-grayish-blue-2: #dde7ee;
-  --grayish-blue: #939dae;
-  --dark-grayish-blue: #5e6778;
-  --very-dark-blue: #1c202b;
+  &:hover {
+    background-color: var(--light-grayish-blue-1);
+  }
 }
